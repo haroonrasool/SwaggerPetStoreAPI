@@ -103,9 +103,9 @@ public class SwaggerPetStore {
     @Test
     public void uploadAnImage() {
         System.out.println("Upload an image");
-        Response response = given().when().post("https://petstore.swagger.io/v2/pet/5/uploadImage");
+        Response response = given().multiPart("file", new File("Lion.jpg")).when().post("https://petstore.swagger.io/v2/pet/5/uploadImage");
         response.prettyPrint();
-//        Assert.assertEquals(200, response.getStatusCode()); // status code 415 instead of 200
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
     @Test
