@@ -1,0 +1,25 @@
+When you have all the data with you from the API.
+Somehow, it looks a bit unstructured, and you will definitely need the data categorically
+and not all the data as a whole. For this, you need to parse this data into a JSON object.
+In some cases, you need to store the data in JSON array as well.
+
+Java by default does not have any in-built class or provide any in-built class
+and method to parse and store these data as objects, so for that,
+you need the class JSONObject (to store the corresponding string data as JSON objects),
+JSONArray (to hold JSON objects in an array) and
+JSONParser (to convert string object into JSON objects).
+
+For that, you will need a package called SimpleJSON.
+Download the required jar files and configure its class path in the system.
+Step:
+Declare an instance of the JSONParser:
+JSONParser jsonParser = new JSONParser();
+Step:
+Convert the string objects into JSON objects:
+JSONObject jsonObject = (JSONObject)parse.parse(inline);
+Step:
+First, convert the JSON object into JSONArray object like this:
+JSONArray jsonArray = (JSONArray) jsonObject.get(“results”);
+Step:
+Once the JSON objects are stored in the array, read the corresponding JSONArray objects,
+and convert it to JSON objects again so you get the elements within the results array. Here is how you do it:
